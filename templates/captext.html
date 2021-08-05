@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analyzing Your Text...</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{ purpose }}!</strong> {{ purpose }} from the sentence has been analyzed.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<h1 style="text-align:center; text-transform: uppercase">Your Analyzed Text - {{ purpose }}</h1>
+
+<div style="width:60%; margin: 0 auto;">
+    <p style="margin-top: 50px;">
+       <li style="font-size: 20px"> <b> Converted to Capital Letters </b> </li><br>
+       <span style="margin-left: 30px"> {{ changed_text }} </span>
+    </p>
+    <p>
+    <br>
+        <li style="font-size: 20px"> <b> Typed sentence was: </b> </li><br>
+        <pre style="margin-left: 30px"> {{ old_text }} </pre>
+    </p>
+</div>
+
+<script>
+   window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove();
+    });
+}, 2000);
+</script>
+</body>
+</html>
